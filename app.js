@@ -14,6 +14,10 @@ function Formsubmit(event) {
   let lastName = document.getElementById("lastName");
   let email = document.getElementById("email");
   let password = document.getElementById("password");
+  if(!firstName.value || !lastName.value || !email.value || !password.value){
+    alert("Please fill all the fields")
+  return
+  }
   let savedData = JSON.parse(localStorage.getItem("User")) || [];
   let resuilt = savedData.find(
     (element) =>
@@ -44,6 +48,10 @@ function SignIn(event) {
   event.preventDefault();
   let email = document.getElementById("email");
   let password = document.getElementById("password");
+  if(!email.value || !password.value){
+    return alert("please enter email and password"
+    )
+  }
   let savedData = JSON.parse(localStorage.getItem("User")) || [];
   let resuilt = savedData.find(
     (element) =>
